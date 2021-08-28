@@ -1,0 +1,31 @@
+{
+    "name": "json-rpc-example",
+    "version": "1.0.0",
+    "description": "A super simple JSON-RPC example based on Laminas JSON-RPC Server, OpenRPC Client JS, and Mithril.",
+    "main": "index.js",
+    "scripts": {
+        "start": "webpack frontend/index.js --output web/bin/app.js -d --watch",
+        "build": "webpack frontend/index.js --output web/bin/app.js -p",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "FIXFIX": "webpack --progress --profile --colors --display-error-details --display-cached"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tbreuss/json-rpc-example.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/tbreuss/json-rpc-example/issues"
+    },
+    "homepage": "https://github.com/tbreuss/json-rpc-example#readme",
+    "dependencies": {
+        "@open-rpc/client-js": "^1.7.1",
+        "mithril": "^2.0.4"
+    },
+    "devDependencies": {
+        "webpack": "^4.42.1",
+        "webpack-cli": "^3.3.11"
+    }
+}
