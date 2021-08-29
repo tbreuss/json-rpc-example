@@ -1,0 +1,11 @@
+version: '3'
+services:
+  php:
+    build: ./
+    volumes:
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      - ./:/app:delegated
+    ports:
+      - '8000:80'
+    environment:
+      PHP_IDE_CONFIG: serverName=localhost
