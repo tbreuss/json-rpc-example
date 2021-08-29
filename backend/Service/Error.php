@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tebe\Example\JsonRpcWebApp;
+namespace Tebe\Example\JsonRpcWebApp\Service;
 
 use Laminas\Json\Server\Exception\RuntimeException;
 
