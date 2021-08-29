@@ -4,6 +4,11 @@ A super simple JSON-RPC example based on [Laminas JSON-RPC Server](https://docs.
 [OpenRPC Client JS](https://github.com/open-rpc/client-js), and [Mithril](https://mithril.js.org/).  
 
 
+## Install
+ 
+    composer install
+    npm install
+
 ## Run
 
 Frontend

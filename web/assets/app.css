@@ -382,3 +382,9 @@ img.lazy[data-src] {
 .articles ul {
     margin-left: 1.1em;
 }
+
+.error {
+    color: red;
+    padding: 0.5rem;
+    border: 1px solid lightcoral;
+}

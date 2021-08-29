@@ -2,6 +2,7 @@
 
 use Tebe\Example\JsonRpcWebApp\Calculator;
 use Tebe\Example\JsonRpcWebApp\Ping;
+use Tebe\Example\JsonRpcWebApp\Error;
 
 error_reporting(E_ALL);
 ini_set('display_errors', 0);
@@ -12,6 +13,7 @@ include_once '../vendor/autoload.php';
 
 $server = new Laminas\Json\Server\Server();
 $server->setClass(Calculator::class, 'calculator');
+$server->setClass(Error::class, 'error');
 $server->setClass(Ping::class);
 
 if ('GET' == $_SERVER['REQUEST_METHOD']) {
