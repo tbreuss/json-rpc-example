@@ -6,13 +6,12 @@ export default {
     m('h1', 'Ping'),
     m('button', {
       onclick: () => {
-        PingModel.loadList().then(() => { m.redraw()})
+        PingModel.loadList()
       }
     }, 'Ping API'),
     m('button', {
       onclick: () => {
         PingModel.resetList()
-        m.redraw()
       }
     }, 'Reset'),
     PingModel.list.map((row) => m('div', row))
