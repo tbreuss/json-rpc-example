@@ -85,7 +85,7 @@ class Calculator
         if (count($errors) > 0) {
             return new CalculatorPayload(0, $errors);
         }
-        if ($y === 0) {
+        if ($y == 0.0) { // we want equal operator here
             return new CalculatorPayload(0, ['Division by zero']);
         }
         try {
