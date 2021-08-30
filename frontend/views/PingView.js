@@ -10,6 +10,7 @@ export default {
       }
     }, 'Ping API'),
     m('button', {
+      hidden: PingModel.list.length === 0,
       onclick: () => {
         PingModel.resetList()
       }
