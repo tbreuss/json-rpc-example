@@ -388,3 +388,11 @@ img.lazy[data-src] {
     padding: 0.5rem;
     border: 1px solid lightcoral;
 }
+
+.persons {
+    width: 100%;
+}
+
+.text-right {
+    text-align: right;
+}

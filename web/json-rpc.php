@@ -15,6 +15,7 @@ include_once '../vendor/autoload.php';
 $server = new Laminas\Json\Server\Server();
 $server->setClass(Service\Calculator::class, 'calculator');
 $server->setClass(Service\Error::class, 'error');
+$server->setClass(Service\Person::class, 'person');
 $server->setClass(Service\Ping::class);
 
 if ('GET' == $_SERVER['REQUEST_METHOD']) {

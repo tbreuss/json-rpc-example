@@ -9,6 +9,9 @@ export default {
       m('li.site-navigation__error',
         m(m.route.Link, {href: '/error'}, 'Error')
       ),
+      m('li.site-navigation__person',
+        m(m.route.Link, {href: '/person'}, 'Persons')
+      ),
       m('li.site-navigation__ping',
         m(m.route.Link, {href: '/ping'}, 'Ping')
       )
