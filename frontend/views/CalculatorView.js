@@ -1,7 +1,7 @@
 import m from 'mithril'
-import {Client, HTTPTransport, RequestManager} from "@open-rpc/client-js"
+import {Client, HTTPTransport, RequestManager} from '@open-rpc/client-js'
 
-const transport = new HTTPTransport("json-rpc.php")
+const transport = new HTTPTransport('json-rpc.php')
 const client = new Client(new RequestManager([transport]))
 
 export default () => {
@@ -15,7 +15,7 @@ export default () => {
   }
 
   const submit = (e) => {
-    const method = "calculator." + form.operator
+    const method = 'calculator.' + form.operator
     return client.request({
       method: method,
       params: [form.operandOne, form.operandTwo]
@@ -24,12 +24,11 @@ export default () => {
 
   return {
     view: () => [
-      m("h1", "Calculator"), [
+      m('h1', 'Calculator'), [
         m('form', {
           onsubmit: (e) => {
             e.preventDefault()
-            submit().
-            then(result => {
+            submit().then(result => {
               if (result.errors.length > 0) {
                 form.errors = result.errors
               } else {
@@ -43,31 +42,31 @@ export default () => {
               })
           }
         }, [
-          m("input[type=text]", {
-            placeholder: "Number",
+          m('input[type=text]', {
+            placeholder: 'Number',
             value: form.operandOne,
             onchange: (e) => form.operandOne = e.target.value,
           }),
-          m("select", {
+          m('select', {
             selected: form.operator,
             onchange: (e) => form.operator = e.target.value,
-            oncreate: ({dom}) => dom.querySelector('[value="' + form.operator + '"]').selected = true,
-          },[
-            m("option[value=add]", "plus"),
-            m("option[value=subtract]", "minus"),
-            m("option[value=multiply]", "times"),
-            m("option[value=divide]", "divided by"),
+            oncreate: ({dom}) => dom.querySelector('[value=' + form.operator + ']').selected = true,
+          }, [
+            m('option[value=add]', 'plus'),
+            m('option[value=subtract]', 'minus'),
+            m('option[value=multiply]', 'times'),
+            m('option[value=divide]', 'divided by'),
           ]),
-          m("input[type=text]", {
-            placeholder: "Number",
+          m('input[type=text]', {
+            placeholder: 'Number',
             value: form.operandTwo,
             onchange: (e) => form.operandTwo = e.target.value,
           }),
-          m("button", {}, "equals"),
-          m("input[readonly]", {
+          m('button', {}, 'equals'),
+          m('input[readonly]', {
             value: form.result
           }),
-          m("div[style=color:red]", form.errors.map((error) => {
+          m('div[style=color:red]', form.errors.map((error) => {
             return m('div', error)
           }))
         ])

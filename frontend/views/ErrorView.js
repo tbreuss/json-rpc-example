@@ -1,5 +1,5 @@
 import m from 'mithril'
-import api from "../api";
+import api from '../api';
 import {JsonRpcErrorModel} from '../models/JsonRpcErrorModel';
 
 export default {

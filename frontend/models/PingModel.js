@@ -1,6 +1,6 @@
-import m from "mithril";
+import m from 'mithril';
 import api from '../api'
-import {JsonRpcErrorModel} from "./JsonRpcErrorModel";
+import {JsonRpcErrorModel} from './JsonRpcErrorModel';
 
 export const PingModel = {
   list: [],

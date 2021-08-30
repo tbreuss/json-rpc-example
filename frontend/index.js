@@ -3,8 +3,8 @@ import CalculatorView from './views/CalculatorView'
 import HomeView from './views/HomeView'
 import LayoutView from './views/LayoutView'
 import NotFoundView from './views/NotFoundView'
-import PingView from "./views/PingView";
-import ErrorView from "./views/ErrorView";
+import PingView from './views/PingView';
+import ErrorView from './views/ErrorView';
 
 m.route(document.getElementById('app'), '/', {
   '/': {

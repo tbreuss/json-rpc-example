@@ -1,5 +1,6 @@
 import m from 'mithril'
 import {JsonRpcErrorModel} from '../models/JsonRpcErrorModel'
+import MenuComponent from '../components/MenuComponent';
 
 export default {
   view: ({children}) => m('.app',
@@ -7,19 +8,7 @@ export default {
       m('h1.site-title',
         m(m.route.Link, {href: '/'}, m('span.title-text', 'JSON-RPC Example'))
       ),
-      m('nav.site-navigation',
-        m('ul',
-          m('li.site-navigation__calculator',
-            m(m.route.Link, {href: '/calculator'}, 'Calculator')
-          ),
-          m('li.site-navigation__error',
-            m(m.route.Link, {href: '/error'}, 'Error')
-          ),
-          m('li.site-navigation__ping',
-            m(m.route.Link, {href: '/ping'}, 'Ping')
-          )
-        )
-      )
+      m(MenuComponent),
     ),
     JsonRpcErrorModel.list.map(error => m('div.error', error.message)),
     m('.main', children),
