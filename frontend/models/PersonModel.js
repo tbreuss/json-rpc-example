@@ -1,5 +1,5 @@
 import api from "../api";
-import {JsonRpcErrorModel} from "./JsonRpcErrorModel";
+import {ErrorModel} from "./ErrorModel";
 import m from "mithril";
 
 export const PersonModel = {
@@ -7,12 +7,12 @@ export const PersonModel = {
   loadList: () => api.person.getAll()
     .then((result) => {
       PersonModel.list = result
-      JsonRpcErrorModel.resetErrors()
+      ErrorModel.resetErrors()
       m.redraw()
       return result
     })
     .catch((error) => {
-      JsonRpcErrorModel.setErrors([error])
+      ErrorModel.setErrors([error])
       m.redraw()
       throw error
     })

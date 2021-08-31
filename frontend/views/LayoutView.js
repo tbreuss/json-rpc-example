@@ -1,5 +1,5 @@
 import m from 'mithril'
-import {JsonRpcErrorModel} from '../models/JsonRpcErrorModel'
+import {ErrorModel} from '../models/ErrorModel'
 import MenuComponent from '../components/MenuComponent';
 
 export default {
@@ -10,7 +10,7 @@ export default {
       ),
       m(MenuComponent),
     ),
-    JsonRpcErrorModel.list.map(error => m('div.error', error.message)),
+    ErrorModel.list.map(error => m('div.error', error.message)),
     m('.main', children),
     m('.site-footer',
       m('p.hug', '© 2020 Thomas Breuss')

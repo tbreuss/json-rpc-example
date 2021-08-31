@@ -1,6 +1,6 @@
 import {Client, HTTPTransport, RequestManager} from '@open-rpc/client-js'
 import m from 'mithril';
-import {JsonRpcErrorModel} from './models/JsonRpcErrorModel';
+import {ErrorModel} from './models/ErrorModel';
 
 const transport = new HTTPTransport('json-rpc.php')
 const client = new Client(new RequestManager([transport]))
@@ -10,14 +10,14 @@ export default {
     error: () => client.request({
       method: 'error.error'
     }).catch((error) => {
-      JsonRpcErrorModel.setErrors([error])
+      ErrorModel.setErrors([error])
       m.redraw()
       throw error
     }),
     success: () => client.request({
       method: 'error.success'
     }).then((result) => {
-      JsonRpcErrorModel.resetErrors()
+      ErrorModel.resetErrors()
       m.redraw()
       return result
     })
@@ -26,14 +26,14 @@ export default {
     getAll: () => client.request({
       method: 'person.getAll'
     }).catch((error) => {
-      JsonRpcErrorModel.setErrors([error])
+      ErrorModel.setErrors([error])
       m.redraw()
       throw error
     }),
     getOne: () => client.request({
       method: 'person.getOne'
     }).catch((error) => {
-      JsonRpcErrorModel.setErrors([error])
+      ErrorModel.setErrors([error])
       m.redraw()
       throw error
     }),
